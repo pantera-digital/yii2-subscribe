@@ -19,14 +19,15 @@ use yii\widgets\ActiveForm;
 <?php $form = ActiveForm::begin([
     'id' => 'subscribe-form',
     'action' => $action,
-    'validateOnBlur' => false,
-    'validateOnChange' => false,
-    'enableAjaxValidation' => true,
+    'enableClientScript' => false,
 ]) ?>
     <div class="inner">
         <div class="form-group form-group-actions inner__r">
-            <?= Html::submitButton('Подписаться', [
-                'class' => 'btn btn-darkred'
+            <?= Html::submitButton(Html::tag('span', 'Подписаться', [
+                'class' => 'ladda-label',
+            ]), [
+                'class' => 'btn btn-darkred ladda-button',
+                'data-style' => 'zoom-in',
             ]) ?>
         </div>
         <?= $form->field($model, 'email', [

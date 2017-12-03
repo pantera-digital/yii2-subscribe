@@ -8,6 +8,7 @@
 
 namespace pantera\subscribe\controllers;
 
+use pantera\subscribe\FrontendModule;
 use pantera\subscribe\models\Subscribe;
 use Yii;
 use yii\filters\VerbFilter;
@@ -16,6 +17,9 @@ use yii\web\Response;
 
 class DefaultController extends Controller
 {
+    /* @var FrontendModule */
+    public $module;
+
     public function behaviors()
     {
         return [
@@ -32,18 +36,17 @@ class DefaultController extends Controller
     {
         Yii::$app->response->format = Response::FORMAT_JSON;
         $model = new Subscribe();
-        $model->load(Yii::$app->request->post());
-        if (Yii::$app->request->post('ajax')) {
-            $model->validate();
-            return $model->getErrors();
-        }
-        if ($model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return [
                 'status' => 'success',
+                'style' => 'notice',
+                'message' => $this->module->successMessage,
             ];
         } else {
             return [
                 'status' => 'error',
+                'style' => 'error',
+                'message' => current($model->getFirstErrors()),
             ];
         }
     }

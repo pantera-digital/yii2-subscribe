@@ -9,6 +9,7 @@
 namespace pantera\subscribe\widget;
 
 use pantera\subscribe\models\Subscribe;
+use pantera\subscribe\SubscribeAsset;
 use yii\base\Widget;
 use yii\helpers\Url;
 
@@ -33,5 +34,6 @@ class SubscribeWidget extends Widget
         if (is_null($this->action)) {
             $this->action = Url::to(['/subscribe/default/index']);
         }
+        SubscribeAsset::register($this->view);
     }
 }

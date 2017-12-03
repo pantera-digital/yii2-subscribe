@@ -2,7 +2,7 @@
 
 namespace pantera\subscribe\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "subscribe".
@@ -11,7 +11,7 @@ use Yii;
  * @property string $email
  * @property string $created_at
  */
-class Subscribe extends \yii\db\ActiveRecord
+class Subscribe extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -30,6 +30,7 @@ class Subscribe extends \yii\db\ActiveRecord
             [['email'], 'required'],
             [['created_at'], 'safe'],
             [['email'], 'string', 'max' => 255],
+            [['email'], 'email'],
             [['email'], 'unique'],
         ];
     }
@@ -41,8 +42,8 @@ class Subscribe extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'email' => 'Email',
-            'created_at' => 'Created At',
+            'email' => 'E-mail',
+            'created_at' => 'Дата подписки',
         ];
     }
 }
