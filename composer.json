@@ -7,6 +7,10 @@
       "email": "sopranowest@gmail.com"
     }
   ],
+  "require": {
+    "bower-asset/ladda": "*",
+    "bower-asset/growl": "*"
+  },
   "autoload": {
     "psr-4": {
       "pantera\\subscribe\\": ""
