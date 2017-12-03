@@ -1,0 +1,15 @@
+{
+  "name": "pantera-digital/yii2-subscribe",
+  "type": "yii2-extension",
+  "authors": [
+    {
+      "name": "singletonn",
+      "email": "sopranowest@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "pantera\\subscribe\\": ""
+    }
+  }
+}
