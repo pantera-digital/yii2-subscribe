@@ -5,7 +5,7 @@
 ```
 composer require pantera-digital/yii2-subscribe "@dev"
 ```
-Или добавте в composer.json
+Или добавьте в composer.json
 ```
 "pantera-digital/yii2-subscribe": "@dev"
 ```
