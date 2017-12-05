@@ -41,6 +41,15 @@ php yii migrate/up --migrationPath=@pantera/subscribe/migrations
 ```
 <?= \pantera\subscribe\widget\SubscribeWidget::widget() ?>
 ```
+или
+```
+<?php
+use pantera\subscribe\widget\SubscribeWidget;
+...
+
+<?= SubscribeWidget::widget() ?>
+```
+
 ##### Настройка
 у виджета есть только один параметр
 ```
