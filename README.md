@@ -39,7 +39,7 @@ php yii migrate/up --migrationPath=@pantera/subscribe/migrations
 
 ## Использование виджета
 ```
-<?= \pantera\subscribe\widgets\SubscribeWidget::widget() ?>
+<?= \pantera\subscribe\widget\SubscribeWidget::widget() ?>
 ```
 ##### Настройка
 у виджета есть только один параметр
