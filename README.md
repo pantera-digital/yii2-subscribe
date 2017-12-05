@@ -39,15 +39,15 @@ php yii migrate/up --migrationPath=@pantera/subscribe/migrations
 
 ## Использование виджета
 ```
-<?= \pantera\subscribe\widget\SubscribeWidget::widget() ?>
+<?php
+
+use pantera\subscribe\widget\SubscribeWidget;
+
+<?= SubscribeWidget::widget() ?>
 ```
 или
 ```
-<?php
-use pantera\subscribe\widget\SubscribeWidget;
-...
-
-<?= SubscribeWidget::widget() ?>
+<?= \pantera\subscribe\widget\SubscribeWidget::widget() ?>
 ```
 
 ##### Настройка
