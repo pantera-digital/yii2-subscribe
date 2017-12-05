@@ -2,7 +2,7 @@
 
 namespace pantera\subscribe\admin\controllers;
 
-use pantera\subscribe\BackendModule;
+use pantera\subscribe\admin\BackendModule;
 use pantera\subscribe\models\Subscribe;
 use pantera\subscribe\models\SubscribeSearch;
 use Yii;
