@@ -1,6 +1,6 @@
 <?php
 
-namespace pantera\subscribe\models;
+namespace pantera\subscribe\admin\models;
 
 use Yii;
 use yii\base\Model;

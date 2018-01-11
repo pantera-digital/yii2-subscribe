@@ -4,7 +4,7 @@ namespace pantera\subscribe\admin\controllers;
 
 use pantera\subscribe\admin\BackendModule;
 use pantera\subscribe\models\Subscribe;
-use pantera\subscribe\models\SubscribeSearch;
+use pantera\subscribe\models\admin\SubscribeSearch;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;

@@ -6,7 +6,7 @@ use yii\helpers\Html;
 use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
-/* @var $searchModel pantera\subscribe\models\SubscribeSearch */
+/* @var $searchModel pantera\subscribe\models\admin\SubscribeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Подписчики';
