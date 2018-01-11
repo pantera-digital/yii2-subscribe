@@ -9,34 +9,28 @@
 use pantera\subscribe\models\Subscribe;
 use yii\helpers\Html;
 use yii\web\View;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 
 /* @var $this View */
 /* @var $model Subscribe */
 /* @var $action string */
 ?>
-
+<div class="h4">Подписка на рассылку</div>
 <?php $form = ActiveForm::begin([
     'id' => 'subscribe-form',
     'action' => $action,
     'enableClientScript' => false,
 ]) ?>
-    <div class="inner">
-        <div class="form-group form-group-actions inner__r">
-            <?= Html::submitButton(Html::tag('span', 'Подписаться', [
-                'class' => 'ladda-label',
-            ]), [
-                'class' => 'btn btn-darkred ladda-button',
-                'data-style' => 'zoom-in',
-            ]) ?>
-        </div>
-        <?= $form->field($model, 'email', [
-            'options' => [
-                'class' => 'form-group form-group-actions inner__l',
-            ],
-        ])->textInput([
-            'placeholder' => 'E-mail',
-            'type' => 'email',
-        ])->label(false)->error(false) ?>
-    </div>
+    <?php $button = Html::submitButton(Html::tag('span', 'Подписаться', [
+        'class' => 'ladda-label',
+    ]), [
+        'class' => 'btn btn-primary ladda-button',
+        'data-style' => 'zoom-in',
+    ]) ?>
+    <?= $form->field($model, 'email', [
+        'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn">' . $button . '</span></div>'
+    ])->textInput([
+        'placeholder' => 'Ваш e-mail',
+        'type' => 'email',
+    ])->label(false)->error(false) ?>
 <?php ActiveForm::end() ?>
