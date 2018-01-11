@@ -15,22 +15,25 @@ use yii\bootstrap\ActiveForm;
 /* @var $model Subscribe */
 /* @var $action string */
 ?>
-<div class="h4">Подписка на рассылку</div>
-<?php $form = ActiveForm::begin([
-    'id' => 'subscribe-form',
-    'action' => $action,
-    'enableClientScript' => false,
-]) ?>
-    <?php $button = Html::submitButton(Html::tag('span', 'Подписаться', [
-        'class' => 'ladda-label',
-    ]), [
-        'class' => 'btn btn-primary ladda-button',
-        'data-style' => 'zoom-in',
+<div class="subscribe-widget">
+    <div class="h4">Подписаться на рассылку</div>
+    <?php $form = ActiveForm::begin([
+        'id' => 'subscribe-form',
+        'action' => $action,
+        'enableClientScript' => false,
     ]) ?>
-    <?= $form->field($model, 'email', [
-        'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn">' . $button . '</span></div>'
-    ])->textInput([
-        'placeholder' => 'Ваш e-mail',
-        'type' => 'email',
-    ])->label(false)->error(false) ?>
-<?php ActiveForm::end() ?>
+        <?php $button = Html::submitButton(Html::tag('span', 'Подписаться', [
+            'class' => 'ladda-label',
+        ]), [
+            'class' => 'btn btn-primary ladda-button',
+            'data-style' => 'zoom-in',
+        ]) ?>
+        <?= $form->field($model, 'email', [
+            'inputTemplate' => '<div class="input-group">{input}<span class="input-group-btn">' . $button . '</span></div>'
+        ])->textInput([
+            'placeholder' => 'Ваш e-mail',
+            'type' => 'email',
+        ])->label(false)->error(false) ?>
+    <div class="hint">Расслаем интересные новости и выгодные акции</div>
+    <?php ActiveForm::end() ?>
+</div>
