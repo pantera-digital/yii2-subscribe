@@ -34,6 +34,6 @@ use yii\bootstrap\ActiveForm;
             'placeholder' => 'Ваш e-mail',
             'type' => 'email',
         ])->label(false)->error(false) ?>
-    <div class="hint">Расслаем интересные новости и выгодные акции</div>
+    <div class="hint">Рассылаем интересные новости и выгодные акции</div>
     <?php ActiveForm::end() ?>
 </div>
