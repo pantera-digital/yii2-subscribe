@@ -1,5 +1,5 @@
-$(window).on('load', function () {
-    $('#subscribe-form').submit(function () {
+var initSubscribeForm = function (id) {
+    $('#' + id).submit(function () {
         var self = $(this);
         var btn = self.find('button[type="submit"]');
         btn.ladda();
@@ -15,7 +15,14 @@ $(window).on('load', function () {
                 style: result.style
             });
             btn.ladda('stop');
+            if (result.status === 'success') {
+                var event = new Event('subscribe-form-success');
+                document.dispatchEvent(event)
+            }
         });
         return false;
     });
+}
+$(window).on('load', function () {
+    initSubscribeForm('subscribe-form');
 });
