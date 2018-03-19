@@ -14,7 +14,7 @@ class LaddaAsset extends AssetBundle
 {
     public $sourcePath = '@bower/ladda/dist';
     public $css = [
-        'ladda.min.css',
+        'ladda-themeless.min.css',
     ];
     public $js = [
         'spin.min.js',
